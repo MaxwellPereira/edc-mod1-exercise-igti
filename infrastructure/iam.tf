@@ -29,41 +29,41 @@ resource "aws_iam_policy" "lambda" {
   description = "Provides write permissions to CloudWhatch Logs, S3 buckets and EMR Steps"
 
     policy = <<EOF
-  {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Effect": "Allow",
-              "Action": [
-                  "logs:CreateLogGroup",
-                  "logs:CreateLogStream",
-                  "logs:PutLogEvents"
-              ],
-              "Resource": "*"
-          },
-          {
-              "Effect": "Allow",
-              "Action": [
-                  "s3:*"
-              ],
-              "Resource": "*"
-          },
-          {
-              "Effect": "Allow",
-              "Action": [
-                  "elasticmapreduce:*"
-              ],
-              "Resource": "*"
-          },
-          {
-              "Action": "iam:PassRole",
-              "Resource": [
-                  "arn:aws:iam::251926694694:role/EMR_DefaultRole",
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "elasticmapreduce:*"
+            ],
+            "Resource": "*"
+        },
+        {
+          "Action": "iam:PassRole",
+          "Resouce":
+                  ["arn:aws:iam::251926694694:role/EMR_DefaultRole",
                   "arn:aws:iam::251926694694:role/EMR_EC2_DefaultRole"],
-              "Effect": "Allow"
-          }
-      ]
-  }
+          "Effect": "Allow"
+        }
+    ]
+}
   EOF
 
 }
