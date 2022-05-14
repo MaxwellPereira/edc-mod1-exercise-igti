@@ -3,5 +3,5 @@ variable "aws_region" {
 }
 
 variable "lambda_function_name" {
-  default = "IGTIExecutaEMR"
+  default = "IGTIExecutaEMR_test"
 }
