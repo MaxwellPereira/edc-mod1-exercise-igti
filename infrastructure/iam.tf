@@ -12,6 +12,7 @@ resource "aws_iam_role" "lambda" {
               },
               "Effect": "Allow",
               "Sid": "AssumeRole"
+              "Action": "sts:AssumeRole"
           }
       ]
   }
