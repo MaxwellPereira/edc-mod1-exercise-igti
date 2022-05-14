@@ -25,7 +25,7 @@ resource "aws_iam_role" "lambda" {
 }
 
 resource "aws_iam_policy" "lambda" {
-  name = "IGTIAWSLambdaVasicExecutionRolePolicy"
+  name = "IGTIAWSLambdaBasicExecutionRolePolicy"
   path = "/"
   description = "Provides write permissions to CloudWhatch Logs, S3 buckets and EMR Steps"
 
